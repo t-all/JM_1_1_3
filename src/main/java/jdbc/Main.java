@@ -17,7 +17,7 @@ public class Main {
         User user3 = new User("Semen", "Semenovich", (byte) 35);
         User user4 = new User("Petr", "Petrovich", (byte) 51);
 
-//        userService.createUsersTable();
+        userService.createUsersTable();
 
         userService.saveUser(user1.getName(), user1.getLastName(),user1.getAge());
         System.out.println("User с именем – " + user1.getName() + " добавлен в базу данных");
@@ -31,7 +31,7 @@ public class Main {
         List<User> users = userService.getAllUsers();
         users.forEach(System.out::println);
 
-//        userService.dropUsersTable();
+        userService.dropUsersTable();
 
         userService.cleanUsersTable();
 
