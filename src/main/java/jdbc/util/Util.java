@@ -1,9 +1,6 @@
 package jdbc.util;
 
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class Util {
 
@@ -17,10 +14,9 @@ public class Util {
             Driver driver = new com.mysql.cj.jdbc.Driver();
             DriverManager.registerDriver(driver);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            System.out.println("Соединение установленно");
+            connection.setAutoCommit(false);
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Ошибка соединения");
         }
         return connection;
     }

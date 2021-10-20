@@ -4,11 +4,12 @@ import jdbc.model.User;
 import jdbc.service.UserService;
 import jdbc.service.UserServiceImpl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         UserService userService = new UserServiceImpl();
 
@@ -28,12 +29,13 @@ public class Main {
         userService.saveUser(user4.getName(), user4.getLastName(),user4.getAge());
         System.out.println("User с именем – " + user4.getName() + " добавлен в базу данных");
 
+//        userService.dropUsersTable();
+
+//        userService.cleanUsersTable();
+//        userService.removeUserById(9);
+
         List<User> users = userService.getAllUsers();
         users.forEach(System.out::println);
-
-        userService.dropUsersTable();
-
-        userService.cleanUsersTable();
 
     }
 }
