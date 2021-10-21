@@ -4,7 +4,6 @@ import jdbc.dao.UserDao;
 import jdbc.dao.UserDaoJDBCImpl;
 import jdbc.model.User;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {

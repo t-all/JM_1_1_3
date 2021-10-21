@@ -21,7 +21,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement = connection.createStatement();
             statement.execute("CREATE TABLE IF NOT EXISTS jmp2 " +
                     "(id BIGINT NOT NULL AUTO_INCREMENT, PRIMARY KEY (id), " +
-                    "name VARCHAR (45), lastname VARCHAR (45), age INT )");
+                    "name VARCHAR (45), lastname VARCHAR (45), age TINYINT NOT NULL )");
             connection.commit();
             System.out.println("Таблица создана...");
         } catch (SQLException e) {
